@@ -31,6 +31,10 @@ int main() {
   const std::string str_eleven("eleven");
   const std::string str_twenty("twenty");
   const std::string str_two("two");
+  const std::string str_seven("seven");
+  const std::string str_eight("eight");
+  const std::string str_six("six");
+  const std::string str_five("five");
 
   // Let's create an inner scoping block here to restrict the lifetime of our
   // tree to be shorter than that of the ints and strings, since the tree
@@ -92,6 +96,15 @@ int main() {
     catch (const std::runtime_error& e) {
       std::cout << "\nCaught exception with error message: " << e.what() << std::endl;
     }
+  }
+
+  {
+    Dictionary<int, std::string> t;
+    t.insert(v[4], str_four);
+    t.insert(v[6], str_six);
+    t.insert(v[5], str_five);
+    t.insert(v[7], str_sever);
+    t.insert(v[8], str_eight);
   }
 
   std::cout << "Exiting program normally." << std::endl;
